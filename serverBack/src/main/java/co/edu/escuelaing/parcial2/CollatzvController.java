@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class GreetingController {
+public class CollatzvController {
 
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
     @GetMapping("/collatzsequence")
-    public String greeting(@RequestParam(value = "value", defaultValue = "13") Integer value) {
+    public String collatz(@RequestParam(value = "value", defaultValue = "13") Integer value) {
         return GreetingController.Collatz(value);
     }
 

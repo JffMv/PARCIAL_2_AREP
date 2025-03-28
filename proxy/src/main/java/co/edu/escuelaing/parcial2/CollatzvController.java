@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class GreetingController {
+public class CollatzvController {
 
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
     private boolean flag = true;
 
     @GetMapping("/collatz")
-    public String greeting(@RequestParam(value = "value", defaultValue = "13") Integer value) throws IOException {
+    public String collatz(@RequestParam(value = "value", defaultValue = "13") Integer value) throws IOException {
         Integer [] array = {value};
         flag = !flag;
         return HttpConnection.conection(array,flag);
